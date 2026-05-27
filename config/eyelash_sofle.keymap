@@ -55,6 +55,15 @@
         flavor = "tap-preferred";
     };
 
+    tdshift: tdshift {
+        compatible = "zmk,behavior-hold-tap";
+        label = "TDSHIFT";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <100>;
+    };
+
     macros {
         shift_MB3: shift_MB3 {
             compatible = "zmk,behavior-macro";
@@ -95,11 +104,11 @@
 
         MAIN {
             bindings = <
-&kp ESC                      &td EXCLAMATION NUMBER_1  &td AT_SIGN NUMBER_2  &td HASH NUMBER_3   &td DOLLAR NUMBER_4  &td PERCENT N5    &kp UP_ARROW     &td CARET NUMBER_6  &td AMPERSAND N7   &td ASTRK N8                     &td LEFT_PARENTHESIS N9  &td RIGHT_PARENTHESIS N0  &kp BACKSPACE
-&kp TAB                      &kp Q                     &kp W                 &kp E               &kp R                &kp T             &kp DOWN_ARROW   &kp Y               &kp U              &kp I                            &kp O                    &kp P                     &td PIPE EQUAL
-&kp LCTRL                    &td LEFT_GUI A            &td LEFT_ALT S        &td LEFT_CONTROL D  &td LEFT_SHIFT F     &kp G             &kp LEFT_ARROW   &kp H               &td RIGHT_SHIFT J  &td RIGHT_CONTROL K              &td RIGHT_ALT L          &td RIGHT_GUI SEMI        &td TILDE APOS
-&td LSHIFT LEFT_PARENTHESIS  &kp Z                     &kp X                 &kp C               &kp V                &kp B             &kp RIGHT_ARROW  &kp B               &kp N              &kp M                            &kp COMMA                &kp DOT                   &td MINUS SLASH
-&kp C_MUTE                   &kp LCTRL                 &mo 2                 &kp LEFT_ALT        &kp LEFT_GUI         &kp SPACE         &kp ENTER        &kp ENTER           &mo 1              &td RIGHT_ALT RIGHT_PARENTHESIS  &trans                   &kp DELETE
+&kp ESC                           &td EXCLAMATION NUMBER_1  &td AT_SIGN NUMBER_2  &td HASH NUMBER_3   &td DOLLAR NUMBER_4  &td PERCENT N5    &kp UP_ARROW     &td CARET NUMBER_6  &td AMPERSAND N7   &td ASTRK N8                          &td LEFT_PARENTHESIS N9  &td RIGHT_PARENTHESIS N0  &kp BACKSPACE
+&kp TAB                           &kp Q                     &kp W                 &kp E               &kp R                &kp T             &kp DOWN_ARROW   &kp Y               &kp U              &kp I                                 &kp O                    &kp P                     &td PIPE EQUAL
+&kp LCTRL                         &td LEFT_GUI A            &td LEFT_ALT S        &td LEFT_CONTROL D  &td LEFT_SHIFT F     &kp G             &kp LEFT_ARROW   &kp H               &td RIGHT_SHIFT J  &td RIGHT_CONTROL K                   &td RIGHT_ALT L          &td RIGHT_GUI SEMI        &td TILDE APOS
+&tdshift LSHIFT LEFT_PARENTHESIS  &kp Z                     &kp X                 &kp C               &kp V                &kp B             &kp RIGHT_ARROW  &kp B               &kp N              &kp M                                 &kp COMMA                &kp DOT                   &td MINUS SLASH
+&kp C_MUTE                        &kp LCTRL                 &mo 2                 &kp LEFT_ALT        &kp LEFT_GUI         &kp SPACE         &kp ENTER        &kp ENTER           &mo 1              &tdshift RIGHT_ALT RIGHT_PARENTHESIS  &trans                   &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
